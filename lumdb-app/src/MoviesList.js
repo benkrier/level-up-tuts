@@ -10,7 +10,7 @@ class MoviesList extends Component {
 
   async componentDidMount() {
     try {
-      const res = await fetch('https://api.themoviedb.org/3/discover/movie?api_key=ff88f1e65473c9df5de623291f3cb2bd&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1');
+      const res = await fetch('https://api.themoviedb.org/3/discover/movie?api_key=[API key here]&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1');
       const movies = await res.json();
       this.setState({
         movies: movies.results,

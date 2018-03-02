@@ -15,7 +15,7 @@ class MoviesDetail extends Component {
 
   async componentDidMount() {
     try {
-      const res = await fetch(`https://api.themoviedb.org/3/movie/${this.props.match.params.id}?api_key=ff88f1e65473c9df5de623291f3cb2bd&language=en-US`);
+      const res = await fetch(`https://api.themoviedb.org/3/movie/${this.props.match.params.id}?api_key=[API key here]&language=en-US`);
       const movie = await res.json();
       this.setState({
         movie,
@@ -31,8 +31,8 @@ class MoviesDetail extends Component {
       <MovieWrapper backdrop={`${BACKDROP_PATH}${movie.backdrop_path}`}>
         <MovieInfo>
           <Overdrive id={movie.id}>
-          <Poster src={`${POSTER_PATH}${movie.poster_path}`} alt="{movie.title}" />
-        </Overdrive>
+            <Poster src={`${POSTER_PATH}${movie.poster_path}`} alt="{movie.title}" />
+          </Overdrive>
           <div>
             <h1>{movie.title}</h1>
             <h3>{movie.release_date}</h3>
