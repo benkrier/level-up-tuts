@@ -26,7 +26,27 @@ const HeaderContainer = styled.div`
   padding: 1.45rem 1.0875rem;
   position: relative;
   z-index: 2;
+  display: flex;
+  justify-content: space-between;
 `;
+
+const MainNav = styled.nav `
+  ul {
+    list-style: none;
+    display: flex;
+    li {
+      margin-left: 10px;
+      font-family: 'Roboto Condensed', sans-serif;
+      a {
+        text-decoration: none;
+        color: #fff;
+        &:hover {
+          border-bottom: 3px solid #524763;
+        }
+      }
+    }
+  }
+`
 
 export default class Header extends Component {
   componentDidUpdate = (prevProps, prevState) => {
@@ -75,7 +95,7 @@ export default class Header extends Component {
             <img src={logo} alt='Level Up logo' />
           </Link>
         </h1>
-      <nav>
+      <MainNav>
         <ul>
           <li>
             <Link to="/">Home</Link>
@@ -84,7 +104,7 @@ export default class Header extends Component {
             <Link to="/about">About</Link>
           </li>
         </ul>
-      </nav>
+      </MainNav>
       </HeaderContainer>
       <Img 
         style={{
@@ -93,6 +113,7 @@ export default class Header extends Component {
           top: 0,
           width: '100%',
           height: '100%',
+          opacity: 0.3,
         }}
         sizes={data.background.sizes} />
     </HeaderWrapper>

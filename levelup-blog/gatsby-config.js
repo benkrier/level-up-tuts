@@ -7,6 +7,12 @@ module.exports = {
     'gatsby-plugin-react-helmet', 
     'gatsby-plugin-styled-components',
     {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`roboto condensed`, `source sans`]
+      }
+    },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'src',
